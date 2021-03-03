@@ -1,0 +1,7 @@
+{
+  "name": "client_server_main_app",
+  "private": true,
+  "dependencies": {
+    "turbolinks": "^5.2.0"
+  }
+}

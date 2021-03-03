@@ -1,0 +1,74 @@
+<html>
+<head>
+
+</head>
+
+<body>
+  <div class="bg-image"></div>
+  <div id="notification-area" class="toast-popup"></div>
+  <br>
+  <h1>
+    The Client and Server
+  </h1>
+  <br>
+  <br>
+
+  <div class="topnav">
+    <button type="button" class="btn btn-success ml-2" id="add-article" style="margin-left: 4%;">Add Article</button>
+    <div class="search-container">
+      <input class="search-input" type="text" placeholder="Search.." name="search">
+      <button type="submit" class="fa fa-search search-article" data-id=${article.id}>Search</button>
+    </div>
+  </div>
+
+
+  <div class="table-wrapper-scroll-y my-custom-scrollbar tableFixHead">
+    <div id="content-space" class="table-info">
+    </div>
+  </div>
+
+
+
+
+  <div class="pagination">
+    <a href="" class="prev_page" data-page="1" rel="prev start" id="prev_button">&laquo; Previous</a>
+    <input type="hidden" id="current-page" value="1">
+    <a href="" class="next_page" data-page="2" rel="next" id="next_button">Next &raquo;</a>
+  </div>
+
+
+  <br>
+  <br>
+  <br>
+
+  <div class="form-wrapper">
+    <div class="card" id="common-form-space">
+      <h2 id="form-header">
+        Add Article
+      </h2>
+      <form class="common_form" id="common-data-form">
+        <div id="editing_space"></div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Title</label>
+          <input type="text" name="article[title]" class="form-control" id="exampleFormControlInput1" required>
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlTextarea1">Description</label>
+          <textarea name="article[description]" class="form-control" id="exampleFormControlTextarea1" rows="3"
+          required></textarea>
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlImage">Image</label>
+          <input type="file" accept="image/*" name="article[article_image]" class="form-control"
+          id="exampleFormControlImage">
+          <img src="/assets/user.png" id="preview-space" height="auto" width="50px">
+        </div>
+
+        <button type="submit" class="btn btn-primary mb-2">Save Article</button>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>
