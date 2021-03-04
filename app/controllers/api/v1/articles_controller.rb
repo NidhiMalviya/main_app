@@ -1,5 +1,7 @@
+
 module Api
   module V1
+  
     class ArticlesController < ApplicationController
       protect_from_forgery with: :null_session
       before_action :set_article, only: [:show, :update, :destroy]
@@ -70,6 +72,32 @@ module Api
           article_prms[:article_image] = Article.extract_file_path(article_prms[:article_image], @article&.article_image)
           article_prms
         end
+
+
+
+        # def request_api(url)
+        #   response = Excon.get(
+        #     url,
+        #     headers: {
+        #       'X-RapidAPI-Host' => URI.parse(url).host,
+        #       'X-RapidAPI-Key' => ENV.fetch('RAPIDAPI_API_KEY')
+        #     }
+        #   )
+        #   return nil if response.status != 200
+        #   JSON.parse(response.body)
+        # end
+
+
+        # def find_article(title, description, article_image)
+        #   request_api(
+        #     "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml"
+        #   )
+        # end
+
+       
+
+
+
 
         # Only allow a trusted parameter "white list" through.
         def article_params

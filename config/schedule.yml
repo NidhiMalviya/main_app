@@ -1,0 +1,5 @@
+# To schedue cron jos here
+
+rss_loader_job:
+  cron: "*/10 * * * *" #it will retrieve data every 10 minute
+  class: "RssWorker"

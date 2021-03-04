@@ -7,15 +7,15 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 #Article.destroy_all
 
-100.times do
-  article = Faker::Books::Dune
-  Article.create(
-    title: article.title,
-    description: article.quote,
-    article_image: Base64.encode64(
-      File.open(
-        "#{Rails.root}/user.png"
-      ).read
-    )
-  )
-end
+# 100.times do
+#   article = Faker::Books::Dune
+#   Article.create(
+#     title: article.title,
+#     description: article.quote,
+#     article_image: Base64.encode64(
+#       File.open(
+#         "#{Rails.root}/user.png"
+#       ).read
+#     )
+#   )
+# end
