@@ -12,13 +12,18 @@ class ArticleLoader
 
     Rails.logger.debug('Creating articles')
     response.dig("rss", "channel", "item").each do |item|
-      Article.find_or_create_by(
-        {
-          title: item["title"],
-          description: item["description"],
-          article_image: extract_image(item["content"])
-        }
-      )
+      begin
+       Article.find_or_create_by(
+         {
+           title: item["title"],
+           description: item["description"],
+           article_image: extract_image(item["content"])
+         }
+        )
+      rescue Exception => e
+        Rails.logger.warn(e.message)
+        next
+      end
     end
   end
 
