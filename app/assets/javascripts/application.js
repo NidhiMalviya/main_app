@@ -49,17 +49,21 @@ $(document).on("turbolinks:load",function()
       <br>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
-          <div class="col-md-4 pt-3">
-            <img src="data:image/jpg;base64,${article.article_image}" alt="Avatar" width="100%">
+          <div class="col-md-12 pt-3">
+            <img class="cover" src="data:image/jpg;base64,${article.article_image}" alt="Avatar" width="100% height="100%">
           </div>
           <div class="col-md-8">
             <div class="card-body">
               <br>
               <figure>
+                <figcaption>—${article.title}</figcaption>
                 <blockquote>
                 <p>${article.description}</p>
                 </blockquote>
-                <figcaption>—${article.title}</figcaption>
+                <p>
+                <a href="${article.source}" target="_blank">${article.provider_name}</a>
+                <p>
+                <p>${article.news_type}<p>
               </figure>
               <br>
               <br>
@@ -243,6 +247,8 @@ $(document).on("turbolinks:load",function()
       $("#editing_space").append(`<input type="hidden" id="#hidden_id_field" name="article[id]" value="${data.id}">`);
       $("#exampleFormControlInput1").val(data.title);
       $("#exampleFormControlTextarea1").val(data.description);
+      $("#exampleFormControlInput2").val(data.source);
+      $("#exampleFormControlInput3").val(data.news_type);
       $("#preview-space").attr("src", ("data:image/jpg;base64," + data.article_image));
 
       $('html, body').animate({

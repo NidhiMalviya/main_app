@@ -33,8 +33,22 @@
     border-radius: 25px;
  }
 
+ .cover {
+    border-radius: 12px;
+ }
+
+ figure {
+    margin-left: 6% !important;
+ }
+
  blockquote {
     margin: 0;
+    height: 220px;
+    width: 469px;
+}
+
+figcaption {
+    width: 449px;
 }
 
 blockquote p {

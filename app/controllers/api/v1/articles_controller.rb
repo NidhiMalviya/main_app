@@ -73,35 +73,9 @@ module Api
           article_prms
         end
 
-
-
-        # def request_api(url)
-        #   response = Excon.get(
-        #     url,
-        #     headers: {
-        #       'X-RapidAPI-Host' => URI.parse(url).host,
-        #       'X-RapidAPI-Key' => ENV.fetch('RAPIDAPI_API_KEY')
-        #     }
-        #   )
-        #   return nil if response.status != 200
-        #   JSON.parse(response.body)
-        # end
-
-
-        # def find_article(title, description, article_image)
-        #   request_api(
-        #     "https://rss.nytimes.com/services/xml/rss/nyt/Science.xml"
-        #   )
-        # end
-
-       
-
-
-
-
         # Only allow a trusted parameter "white list" through.
         def article_params
-          params.require(:article).permit(:title, :description, :search, :article_image)
+          params.require(:article).permit(:title, :description, :search, :article_image, :source, :news_type)
         end
     end
   end
