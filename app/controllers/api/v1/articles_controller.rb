@@ -11,7 +11,7 @@ module Api
         page_number = params[:page_number].to_i || 1
         offset = (page_number - 1)  * 10
         last_page = (Article.count.to_f / 10.0).ceil
-        last_page = last_page <= page_number
+        last_page = last_page < page_number
 
         @articles = Article.all.order(updated_at: :desc).offset(offset).limit(10)
         render json: { articles: @articles, last_page: last_page }
